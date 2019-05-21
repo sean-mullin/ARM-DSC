@@ -86,12 +86,12 @@ configuration Main
 			setscript = {
 
 				Write-Verbose "Setting Ethernet DNS to DHCP"
-                netsh interface ip set dns Ethernet dhcp
+                netsh interface ip set dns "Ethernet" dhcp
 				netsh interface ipv6 set dns "Ethernet" dhcp
 }
             testscript = {
-
-            return $false
+						(Get-DnsClientServerAddress -InterfaceAlias Ethernet* -AddressFamily IPV4 | 
+						Foreach {! ($_.ServerAddresses -contains '127.0.0.1')}) -notcontains $false
             }
 
 		}
