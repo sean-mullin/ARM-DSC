@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "DomainName": {
+      "value": "stannum-man.org"
+    },
+    "Lab-DCName": {
+      "value": "ALB-DC"
+    },
+    "Lab-DC-PIPDnsName": {
+      "value": "semullin-alb-dc"
+    },
+    "AdminUserName": {
+      "value": "ALBAdmin"
+    },
+    "Lab-ADFSName": {
+      "value": "ALB-ADFS"
+    },
+    "Lab-ADFS-PIPDnsName": {
+      "value": "semullin-alb-adfs"
+    },
+    "AdminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/07086a78-87ca-42f3-a311-2af8f1698c66/resourceGroups/RG-ALB-DSC/providers/Microsoft.KeyVault/vaults/KVALBDSCUSGovVirginia"
+        },
+        "secretName": "ALBAdmin"
+      }
+    },
+    "Lab-AADCName": {
+      "value": "ALB-AADC"
+    },
+    "Lab-AADC-PIPDnsName": {
+      "value": "semullin-alb-aadc"
+    },
+    "Lab-WAPName": {
+      "value": "ALB-WAP"
+    },
+    "Lab-WAP-PIPDnsName": {
+      "value": "semullin-alb-wap"
+    }
+  }
+}
