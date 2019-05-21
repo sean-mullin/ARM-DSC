@@ -17,7 +17,7 @@ Get-AzureRmResourceGroup -Name $rgName -Location $Location
 
 
 
-New-AzureRmKeyVault -ResourceGroupName $rgName -VaultName $kVaultName -Location eastus -Sku premium -EnabledForTemplateDeployment
+New-AzureRmKeyVault -ResourceGroupName $rgName -VaultName $kVaultName -Location $location -Sku premium -EnabledForTemplateDeployment
 
 #Get-AzureRmKeyVault -VaultName contoso -ResourceGroupName rgglobal | Remove-AzureRmKeyVault
 
@@ -64,7 +64,7 @@ $ALBDSC | select *
 # specific version of key
 
 # E.g. https://kvcontoso.vault.azure.net:443/secrets/ericlang/afa351084bba48449cc5deb984c7c4a1
-
+=
 
 
 
